@@ -1,0 +1,157 @@
+12:09:26.842 [main] INFO  stepDefinitions.Hooks - ******************* Test Suit Started **********************
+12:09:27.479 [main] INFO  stepDefinitions.Hooks - Entered before scenario
+12:09:27.481 [main] INFO  factory.MyCustomListener - 
+ _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
+|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
+  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
+  | | | |___ ___) || |    ___) || |/ ___ \|  _ < | | | |___| |_| |
+  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
+
+TEST STARTED: 1 Verify if place being succesfully added using AddPlaceAPI 
+----------------------------------------------------------------------(src/test/resources/features/placeValidations.feature; 1 Verify if place being succesfully added using AddPlaceAPI
+12:09:28.624 [main] INFO  utilities.BaseClass -     "lat": {$latitude},
+12:09:28.631 [main] INFO  utilities.BaseClass -     "lng": {$longitude}
+12:09:28.634 [main] INFO  utilities.BaseClass -   "name": "{$name}",
+12:09:28.634 [main] INFO  utilities.BaseClass -   "address": "{$address}",
+12:09:28.634 [main] INFO  utilities.BaseClass -     "{$side layout}"
+12:09:28.634 [main] INFO  utilities.BaseClass -   "language": "{$language}"
+12:09:28.755 [main] INFO  utilities.BaseClass - Rest Request: {
+  "location": {
+    "lat": -37.388492,
+    "lng": 34.589162
+  },
+  "accuracy": 50,
+  "name": "atest",
+  "phone_number": "(+91) 983 893 3937",
+  "address": "Marathahalli, Bangalore",
+  "types": [
+    "shoe park",
+    "shop"
+  ],
+  "website": "http://google.com",
+  "language": "India-IND"
+}
+
+12:09:28.764 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/add/json
+12:09:31.253 [main] INFO  utilities.BaseClass - Response code: 200
+12:09:31.485 [main] INFO  stepDefinitions.CommonSteps - Response: {
+    "status": "OK",
+    "place_id": "4c639667e273abfad5a106b924b26d73",
+    "scope": "APP",
+    "reference": "ce14e93d00fb227a41fa4c91d61d84b9ce14e93d00fb227a41fa4c91d61d84b9",
+    "id": "ce14e93d00fb227a41fa4c91d61d84b9"
+}
+12:09:32.904 [main] INFO  factory.MyCustomListener - 
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
+
+TEST PASSED: 1 Verify if place being succesfully added using AddPlaceAPI 
+----------------------------------------------------------------------
+12:09:32.904 [main] INFO  stepDefinitions.Hooks - Entered after scenario
+12:09:32.932 [main] INFO  stepDefinitions.Hooks - Entered before scenario
+12:09:32.932 [main] INFO  factory.MyCustomListener - 
+ _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
+|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
+  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
+  | | | |___ ___) || |    ___) || |/ ___ \|  _ < | | | |___| |_| |
+  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
+
+TEST STARTED: 2 Verify if place details fecthing succesfully by GetPlaceAPI 
+----------------------------------------------------------------------(src/test/resources/features/placeValidations.feature; 2 Verify if place details fecthing succesfully by GetPlaceAPI
+12:09:32.956 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/get/json
+12:09:33.996 [main] INFO  utilities.BaseClass - Response code: 200
+12:09:34.008 [main] INFO  stepDefinitions.CommonSteps - Response: {
+    "location": {
+        "latitude": "-37.388492",
+        "longitude": "34.589162"
+    },
+    "accuracy": "50",
+    "name": "atest",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Marathahalli, Bangalore",
+    "types": "shoe park,shop",
+    "website": "http://google.com",
+    "language": "India-IND"
+}
+12:09:34.088 [main] INFO  factory.MyCustomListener - 
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
+
+TEST PASSED: 2 Verify if place details fecthing succesfully by GetPlaceAPI 
+----------------------------------------------------------------------
+12:09:34.088 [main] INFO  stepDefinitions.Hooks - Entered after scenario
+12:09:34.098 [main] INFO  stepDefinitions.Hooks - Entered before scenario
+12:09:34.098 [main] INFO  factory.MyCustomListener - 
+ _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
+|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
+  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
+  | | | |___ ___) || |    ___) || |/ ___ \|  _ < | | | |___| |_| |
+  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
+
+TEST STARTED: 3 Verify if place details fecthing succesfully by UpdatePlaceAPI 
+----------------------------------------------------------------------(src/test/resources/features/placeValidations.feature; 3 Verify if place details fecthing succesfully by UpdatePlaceAPI
+12:09:34.114 [main] INFO  utilities.BaseClass - "place_id":"{$place_id}",
+12:09:34.115 [main] INFO  utilities.BaseClass - "address":"{$address}",
+12:09:34.115 [main] INFO  utilities.BaseClass - "key":"{$key}"
+12:09:34.117 [main] INFO  utilities.BaseClass - Rest Request: {
+"place_id":"4c639667e273abfad5a106b924b26d73",
+"address":"HSR Layout",
+"key":"qaclick123"
+}
+
+12:09:34.122 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/update/json
+12:09:35.335 [main] INFO  utilities.BaseClass - Response code: 200
+12:09:35.376 [main] INFO  stepDefinitions.CommonSteps - Response: {
+    "msg": "Address successfully updated"
+}
+12:09:35.417 [main] INFO  factory.MyCustomListener - 
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
+
+TEST PASSED: 3 Verify if place details fecthing succesfully by UpdatePlaceAPI 
+----------------------------------------------------------------------
+12:09:35.417 [main] INFO  stepDefinitions.Hooks - Entered after scenario
+12:09:35.429 [main] INFO  stepDefinitions.Hooks - Entered before scenario
+12:09:35.430 [main] INFO  factory.MyCustomListener - 
+ _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
+|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
+  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
+  | | | |___ ___) || |    ___) || |/ ___ \|  _ < | | | |___| |_| |
+  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
+
+TEST STARTED: 4 Verify if place details fecthing succesfully by DeletePlaceAPI 
+----------------------------------------------------------------------(src/test/resources/features/placeValidations.feature; 4 Verify if place details fecthing succesfully by DeletePlaceAPI
+12:09:35.445 [main] INFO  utilities.BaseClass -     "place_id":"{$place_id}"
+12:09:35.450 [main] INFO  utilities.BaseClass - Rest Request: {
+    "place_id":"4c639667e273abfad5a106b924b26d73"
+}
+
+12:09:35.453 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/delete/json
+12:09:36.727 [main] INFO  utilities.BaseClass - Response code: 200
+12:09:36.746 [main] INFO  stepDefinitions.CommonSteps - Response: {
+    "status": "OK"
+}
+12:09:36.840 [main] INFO  factory.MyCustomListener - 
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
+
+TEST PASSED: 4 Verify if place details fecthing succesfully by DeletePlaceAPI 
+----------------------------------------------------------------------
+12:09:36.841 [main] INFO  stepDefinitions.Hooks - Entered after scenario
+12:09:36.859 [main] INFO  stepDefinitions.Hooks - ******************* Test Suit Completed **********************

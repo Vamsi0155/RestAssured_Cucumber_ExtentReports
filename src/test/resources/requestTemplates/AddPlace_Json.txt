@@ -1,0 +1,16 @@
+{
+  "location": {
+    "lat": {$latitude},
+    "lng": {$longitude}
+  },
+  "accuracy": 50,
+  "name": "{$name}",
+  "phone_number": "(+91) 983 893 3937",
+  "address": "{$address}",
+  "types": [
+    "shoe park",
+    "{$side layout}"
+  ],
+  "website": "http://google.com",
+  "language": "{$language}"
+}
