@@ -1,4 +1,3 @@
-utilities\Test.class
 utilities\BaseClass.class
 stepDefinitions\Hooks.class
 stepDefinitions\CommonSteps.class

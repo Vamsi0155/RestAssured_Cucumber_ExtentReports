@@ -10,7 +10,9 @@ import io.cucumber.junit.Cucumber;
 		glue="stepDefinitions",
 		monochrome=true,
 		tags="",
-		plugin={"html:reports/htmlReports/cucumber.html", 
+		plugin={"utilities.MyCustomListener",
+				"pretty",
+				"html:reports/htmlReports/cucumber.html", 
 				"json:reports/jsonReports/cucumber.json",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 		

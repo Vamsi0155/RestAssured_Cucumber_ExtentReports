@@ -9,7 +9,6 @@ import java.io.PrintStream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import factory.MyCustomListener;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.AfterStep;
@@ -18,6 +17,7 @@ import io.cucumber.java.BeforeAll;
 import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import utilities.BaseClass;
+import utilities.MyCustomListener;
 
 public class Hooks {
 
@@ -56,7 +56,7 @@ public class Hooks {
 		featureName = featureName.substring(0, featureName.lastIndexOf(".feature"));
 		
 		String featurePath = scenario.getUri().getPath();
-		MyCustomListener.getTestStartedLog(scenario.getName(), featurePath.substring(featurePath.indexOf("src/"), featurePath.lastIndexOf(".feature")));
+		MyCustomListener.getTestStartedLog(scenario.getName(), featurePath.substring(featurePath.indexOf("src")));
 		
 		System.out.println("********** " + scenario.getName() + " is started *********");
 		BaseClass.initiateBaseURL(apiLogs);

@@ -12,7 +12,7 @@ Scenario:1 Verify if place being succesfully added using AddPlaceAPI
 	| qaclick123 	|
 	When pass with body of "AddPlace" API below details:
 	| latitude 	 | longitude | name  | address   							 | side layout  | language  |
-	| -37.388492 | 34.589162 | atest | Marathahalli, Bangalore | shop				  | India-IND |
+	| -31.388192 | 37.589062 | atest | Marathahalli, Bangalore | shop				  | India-IND |
 	And the user calls "AddPlace" API with "POST" request
 	Then validate the status code "200"
 	And validation done with below details:

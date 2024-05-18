@@ -1,6 +1,6 @@
-12:09:26.842 [main] INFO  stepDefinitions.Hooks - ******************* Test Suit Started **********************
-12:09:27.479 [main] INFO  stepDefinitions.Hooks - Entered before scenario
-12:09:27.481 [main] INFO  factory.MyCustomListener - 
+19:50:15.281 [main] INFO  stepDefinitions.Hooks - ******************* Test Suit Started **********************
+19:50:15.784 [main] INFO  stepDefinitions.Hooks - Entered before scenario
+19:50:15.785 [main] INFO  utilities.MyCustomListener - 
  _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
 |_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
   | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
@@ -9,16 +9,16 @@
 
 TEST STARTED: 1 Verify if place being succesfully added using AddPlaceAPI 
 ----------------------------------------------------------------------(src/test/resources/features/placeValidations.feature; 1 Verify if place being succesfully added using AddPlaceAPI
-12:09:28.624 [main] INFO  utilities.BaseClass -     "lat": {$latitude},
-12:09:28.631 [main] INFO  utilities.BaseClass -     "lng": {$longitude}
-12:09:28.634 [main] INFO  utilities.BaseClass -   "name": "{$name}",
-12:09:28.634 [main] INFO  utilities.BaseClass -   "address": "{$address}",
-12:09:28.634 [main] INFO  utilities.BaseClass -     "{$side layout}"
-12:09:28.634 [main] INFO  utilities.BaseClass -   "language": "{$language}"
-12:09:28.755 [main] INFO  utilities.BaseClass - Rest Request: {
+19:50:16.857 [main] INFO  utilities.BaseClass -     "lat": {$latitude},
+19:50:16.864 [main] INFO  utilities.BaseClass -     "lng": {$longitude}
+19:50:16.867 [main] INFO  utilities.BaseClass -   "name": "{$name}",
+19:50:16.867 [main] INFO  utilities.BaseClass -   "address": "{$address}",
+19:50:16.867 [main] INFO  utilities.BaseClass -     "{$side layout}"
+19:50:16.867 [main] INFO  utilities.BaseClass -   "language": "{$language}"
+19:50:16.990 [main] INFO  utilities.BaseClass - Rest Request: {
   "location": {
-    "lat": -37.388492,
-    "lng": 34.589162
+    "lat": -31.388192,
+    "lng": 37.589062
   },
   "accuracy": 50,
   "name": "atest",
@@ -32,16 +32,16 @@ TEST STARTED: 1 Verify if place being succesfully added using AddPlaceAPI
   "language": "India-IND"
 }
 
-12:09:28.764 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/add/json
-12:09:31.253 [main] INFO  utilities.BaseClass - Response code: 200
-12:09:31.485 [main] INFO  stepDefinitions.CommonSteps - Response: {
+19:50:17.002 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/add/json
+19:50:20.216 [main] INFO  utilities.BaseClass - Response code: 200
+19:50:20.379 [main] INFO  stepDefinitions.CommonSteps - Response: {
     "status": "OK",
-    "place_id": "4c639667e273abfad5a106b924b26d73",
+    "place_id": "41a5b9f7b4c1f8839f6f23bd3d999149",
     "scope": "APP",
-    "reference": "ce14e93d00fb227a41fa4c91d61d84b9ce14e93d00fb227a41fa4c91d61d84b9",
-    "id": "ce14e93d00fb227a41fa4c91d61d84b9"
+    "reference": "231774e83c55c885c643d85ef099b1b8231774e83c55c885c643d85ef099b1b8",
+    "id": "231774e83c55c885c643d85ef099b1b8"
 }
-12:09:32.904 [main] INFO  factory.MyCustomListener - 
+19:50:21.402 [main] INFO  utilities.MyCustomListener - 
         __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
   _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
  (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
@@ -51,9 +51,10 @@ TEST STARTED: 1 Verify if place being succesfully added using AddPlaceAPI
 
 TEST PASSED: 1 Verify if place being succesfully added using AddPlaceAPI 
 ----------------------------------------------------------------------
-12:09:32.904 [main] INFO  stepDefinitions.Hooks - Entered after scenario
-12:09:32.932 [main] INFO  stepDefinitions.Hooks - Entered before scenario
-12:09:32.932 [main] INFO  factory.MyCustomListener - 
+19:50:21.402 [main] INFO  stepDefinitions.Hooks - Entered after scenario
+19:50:21.438 [main] INFO  utilities.MyCustomListener - Test finished outcome:: Duration:5, Result:PASSED, Feature:features/placeValidations.feature, StartTime:2024-05-18T19:50:15.520+05:30[Asia/Calcutta], TestFailedStep:0, TestFailedStepLine:null, FailureCause:null
+19:50:21.477 [main] INFO  stepDefinitions.Hooks - Entered before scenario
+19:50:21.478 [main] INFO  utilities.MyCustomListener - 
  _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
 |_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
   | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
@@ -62,12 +63,12 @@ TEST PASSED: 1 Verify if place being succesfully added using AddPlaceAPI
 
 TEST STARTED: 2 Verify if place details fecthing succesfully by GetPlaceAPI 
 ----------------------------------------------------------------------(src/test/resources/features/placeValidations.feature; 2 Verify if place details fecthing succesfully by GetPlaceAPI
-12:09:32.956 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/get/json
-12:09:33.996 [main] INFO  utilities.BaseClass - Response code: 200
-12:09:34.008 [main] INFO  stepDefinitions.CommonSteps - Response: {
+19:50:21.506 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/get/json
+19:50:23.083 [main] INFO  utilities.BaseClass - Response code: 200
+19:50:23.090 [main] INFO  stepDefinitions.CommonSteps - Response: {
     "location": {
-        "latitude": "-37.388492",
-        "longitude": "34.589162"
+        "latitude": "-31.388192",
+        "longitude": "37.589062"
     },
     "accuracy": "50",
     "name": "atest",
@@ -77,7 +78,7 @@ TEST STARTED: 2 Verify if place details fecthing succesfully by GetPlaceAPI
     "website": "http://google.com",
     "language": "India-IND"
 }
-12:09:34.088 [main] INFO  factory.MyCustomListener - 
+19:50:23.139 [main] INFO  utilities.MyCustomListener - 
         __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
   _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
  (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
@@ -87,9 +88,10 @@ TEST STARTED: 2 Verify if place details fecthing succesfully by GetPlaceAPI
 
 TEST PASSED: 2 Verify if place details fecthing succesfully by GetPlaceAPI 
 ----------------------------------------------------------------------
-12:09:34.088 [main] INFO  stepDefinitions.Hooks - Entered after scenario
-12:09:34.098 [main] INFO  stepDefinitions.Hooks - Entered before scenario
-12:09:34.098 [main] INFO  factory.MyCustomListener - 
+19:50:23.139 [main] INFO  stepDefinitions.Hooks - Entered after scenario
+19:50:23.144 [main] INFO  utilities.MyCustomListener - Test finished outcome:: Duration:1, Result:PASSED, Feature:features/placeValidations.feature, StartTime:2024-05-18T19:50:21.468+05:30[Asia/Calcutta], TestFailedStep:0, TestFailedStepLine:null, FailureCause:null
+19:50:23.156 [main] INFO  stepDefinitions.Hooks - Entered before scenario
+19:50:23.157 [main] INFO  utilities.MyCustomListener - 
  _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
 |_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
   | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
@@ -98,21 +100,21 @@ TEST PASSED: 2 Verify if place details fecthing succesfully by GetPlaceAPI
 
 TEST STARTED: 3 Verify if place details fecthing succesfully by UpdatePlaceAPI 
 ----------------------------------------------------------------------(src/test/resources/features/placeValidations.feature; 3 Verify if place details fecthing succesfully by UpdatePlaceAPI
-12:09:34.114 [main] INFO  utilities.BaseClass - "place_id":"{$place_id}",
-12:09:34.115 [main] INFO  utilities.BaseClass - "address":"{$address}",
-12:09:34.115 [main] INFO  utilities.BaseClass - "key":"{$key}"
-12:09:34.117 [main] INFO  utilities.BaseClass - Rest Request: {
-"place_id":"4c639667e273abfad5a106b924b26d73",
+19:50:23.184 [main] INFO  utilities.BaseClass - "place_id":"{$place_id}",
+19:50:23.185 [main] INFO  utilities.BaseClass - "address":"{$address}",
+19:50:23.185 [main] INFO  utilities.BaseClass - "key":"{$key}"
+19:50:23.186 [main] INFO  utilities.BaseClass - Rest Request: {
+"place_id":"41a5b9f7b4c1f8839f6f23bd3d999149",
 "address":"HSR Layout",
 "key":"qaclick123"
 }
 
-12:09:34.122 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/update/json
-12:09:35.335 [main] INFO  utilities.BaseClass - Response code: 200
-12:09:35.376 [main] INFO  stepDefinitions.CommonSteps - Response: {
+19:50:23.190 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/update/json
+19:50:25.625 [main] INFO  utilities.BaseClass - Response code: 200
+19:50:25.635 [main] INFO  stepDefinitions.CommonSteps - Response: {
     "msg": "Address successfully updated"
 }
-12:09:35.417 [main] INFO  factory.MyCustomListener - 
+19:50:25.654 [main] INFO  utilities.MyCustomListener - 
         __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
   _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
  (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
@@ -122,9 +124,10 @@ TEST STARTED: 3 Verify if place details fecthing succesfully by UpdatePlaceAPI
 
 TEST PASSED: 3 Verify if place details fecthing succesfully by UpdatePlaceAPI 
 ----------------------------------------------------------------------
-12:09:35.417 [main] INFO  stepDefinitions.Hooks - Entered after scenario
-12:09:35.429 [main] INFO  stepDefinitions.Hooks - Entered before scenario
-12:09:35.430 [main] INFO  factory.MyCustomListener - 
+19:50:25.654 [main] INFO  stepDefinitions.Hooks - Entered after scenario
+19:50:25.656 [main] INFO  utilities.MyCustomListener - Test finished outcome:: Duration:2, Result:PASSED, Feature:features/placeValidations.feature, StartTime:2024-05-18T19:50:23.154+05:30[Asia/Calcutta], TestFailedStep:0, TestFailedStepLine:null, FailureCause:null
+19:50:25.669 [main] INFO  stepDefinitions.Hooks - Entered before scenario
+19:50:25.670 [main] INFO  utilities.MyCustomListener - 
  _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
 |_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
   | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
@@ -133,17 +136,17 @@ TEST PASSED: 3 Verify if place details fecthing succesfully by UpdatePlaceAPI
 
 TEST STARTED: 4 Verify if place details fecthing succesfully by DeletePlaceAPI 
 ----------------------------------------------------------------------(src/test/resources/features/placeValidations.feature; 4 Verify if place details fecthing succesfully by DeletePlaceAPI
-12:09:35.445 [main] INFO  utilities.BaseClass -     "place_id":"{$place_id}"
-12:09:35.450 [main] INFO  utilities.BaseClass - Rest Request: {
-    "place_id":"4c639667e273abfad5a106b924b26d73"
+19:50:25.706 [main] INFO  utilities.BaseClass -     "place_id":"{$place_id}"
+19:50:25.708 [main] INFO  utilities.BaseClass - Rest Request: {
+    "place_id":"41a5b9f7b4c1f8839f6f23bd3d999149"
 }
 
-12:09:35.453 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/delete/json
-12:09:36.727 [main] INFO  utilities.BaseClass - Response code: 200
-12:09:36.746 [main] INFO  stepDefinitions.CommonSteps - Response: {
+19:50:25.713 [main] INFO  utilities.BaseClass - RestAPI url: https://rahulshettyacademy.com/maps/api/place/delete/json
+19:50:27.711 [main] INFO  utilities.BaseClass - Response code: 200
+19:50:27.716 [main] INFO  stepDefinitions.CommonSteps - Response: {
     "status": "OK"
 }
-12:09:36.840 [main] INFO  factory.MyCustomListener - 
+19:50:27.733 [main] INFO  utilities.MyCustomListener - 
         __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
   _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
  (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
@@ -153,5 +156,6 @@ TEST STARTED: 4 Verify if place details fecthing succesfully by DeletePlaceAPI
 
 TEST PASSED: 4 Verify if place details fecthing succesfully by DeletePlaceAPI 
 ----------------------------------------------------------------------
-12:09:36.841 [main] INFO  stepDefinitions.Hooks - Entered after scenario
-12:09:36.859 [main] INFO  stepDefinitions.Hooks - ******************* Test Suit Completed **********************
+19:50:27.734 [main] INFO  stepDefinitions.Hooks - Entered after scenario
+19:50:27.735 [main] INFO  utilities.MyCustomListener - Test finished outcome:: Duration:2, Result:PASSED, Feature:features/placeValidations.feature, StartTime:2024-05-18T19:50:25.664+05:30[Asia/Calcutta], TestFailedStep:0, TestFailedStepLine:null, FailureCause:null
+19:50:27.738 [main] INFO  stepDefinitions.Hooks - ******************* Test Suit Completed **********************
