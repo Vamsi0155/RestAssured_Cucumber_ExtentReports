@@ -1,3 +1,4 @@
-pojoClasses\ResponseLoader.class
-factory\ReadConfigFiles.class
 factory\Loader.class
+pojoClasses\ResponseLoader.class
+factory\DBConnection.class
+factory\ReadConfigFiles.class

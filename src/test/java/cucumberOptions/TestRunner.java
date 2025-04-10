@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="src/test/resources/features/placeValidations.feature",
+		features="src/test/resources/features",
 		glue="stepDefinitions",
 		monochrome=true,
 		tags="",
@@ -14,8 +14,9 @@ import io.cucumber.junit.Cucumber;
 				"pretty",
 				"html:reports/htmlReports/cucumber.html", 
 				"json:reports/jsonReports/cucumber.json",
-				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
-		
+				"rerun:target/failedScenarios.txt",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+		}
 		)
 public class TestRunner {
 

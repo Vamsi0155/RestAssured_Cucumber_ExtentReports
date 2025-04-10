@@ -1,0 +1,818 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Apr 10, 2025 07:57:10 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@Regression</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">End to End E-commerce API validation</p>
+            <p class="text-sm">
+              <span>7:57:12 pm</span> / <span>00:00:09:252</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">End to End E-commerce API validation</h5>
+<span class='badge badge-success'>04.10.2025 7:57:12 pm</span>
+<span class='badge badge-danger'>04.10.2025 7:57:21 pm</span>
+<span class='badge badge-default'>00:00:09:252</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verify the user can able to create a product and order as well as able to delete order and product.</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>1 Verify the login API, whether able to login</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_headers_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add headers to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>Content-Type</td></tr><tr><td>application/json</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>When user calls "LoginUser" API with "POST" request:</span>
+      <div><table class='markup-table table '><tr><td>userEmail</td><td>password</td></tr><tr><td>postman55@gmail.com</td><td>Naidu@117</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "200" with below details:</span>
+      <div><table class='markup-table table '><tr><td>message</td><td>userId</td><td>token</td></tr><tr><td>Login Successfully</td><td>NotNull#</td><td>NotNull#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>2 Verify the Product API, whether able to create a new product</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_headers_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add headers to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>Authorization</td><td>Content-Type</td></tr><tr><td>token#</td><td>multipart/form-data</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request_using_formData(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>When user calls "CreateProduct" API with "POST" request using form-data:</span>
+      <div><table class='markup-table table '><tr><td>productName</td><td>productAddedBy</td><td>productCategory</td><td>productSubCategory</td><td>productPrice</td><td>productDescription</td><td>productFor</td><td>productImage-file</td></tr><tr><td>T-shirt_191</td><td>userId#</td><td>fashion</td><td>shirts</td><td>1500</td><td>Addias Originals</td><td>women</td><td>Image#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "201" with below details:</span>
+      <div><table class='markup-table table '><tr><td>message</td><td>productId</td></tr><tr><td>Product Added Successfully</td><td>NotNull#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="26"><span class="badge log pass-bg mr-2">Pass</span>3 Verify the Order API, whether able to create a new order</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_headers_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add headers to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>Authorization</td><td>Content-Type</td></tr><tr><td>token#</td><td>application/json</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>When user calls "CreateOrder" API with "POST" request:</span>
+      <div><table class='markup-table table '><tr><td>country</td><td>productId</td></tr><tr><td>India</td><td>productId#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "201" with below details:</span>
+      <div><table class='markup-table table '><tr><td>message</td><td>productOrderId</td><td>orders[0]</td></tr><tr><td>Order Placed Successfully</td><td>NotNull</td><td>NotNull#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="38"><span class="badge log pass-bg mr-2">Pass</span>4 Verify the Order Detail API, whether able to fetch order details</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_headers_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add headers to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>Authorization</td><td>Content-Type</td></tr><tr><td>token#</td><td>application/json</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_query_parameters_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>And add query parameters to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>id</td></tr><tr><td>orders[0]#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request(java.lang.String,java.lang.String)">
+                <span>When user calls "FetchOrderDetails" API with "GET" request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "200" with below details:</span>
+      <div><table class='markup-table table '><tr><td>message</td><td>data.orderById</td><td>data.productOrderedId</td><td>data.productName</td></tr><tr><td>Orders fetched for customer Successfully</td><td>NotNull</td><td>NotNull</td><td>NotNull</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="53"><span class="badge log pass-bg mr-2">Pass</span>5 Verify the Order Delete API, whether able to delete order</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_headers_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add headers to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>Authorization</td><td>Content-Type</td></tr><tr><td>token#</td><td>application/json</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_path_parameters_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>And add path parameters to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>OrderId</td></tr><tr><td>orders[0]#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request(java.lang.String,java.lang.String)">
+                <span>When user calls "DeleteOrder" API with "DELETE" request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "200" with below details:</span>
+      <div><table class='markup-table table '><tr><td>message</td></tr><tr><td>Orders Deleted Successfully</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="68"><span class="badge log pass-bg mr-2">Pass</span>6 Verify the Product Delete API, whether able to delete product</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_headers_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add headers to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>Authorization</td><td>Content-Type</td></tr><tr><td>token#</td><td>application/json</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_path_parameters_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>And add path parameters to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>productId</td></tr><tr><td>productId#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request(java.lang.String,java.lang.String)">
+                <span>When user calls "DeleteProduct" API with "DELETE" request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "200" with below details:</span>
+      <div><table class='markup-table table '><tr><td>message</td></tr><tr><td>Product Deleted Successfully</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="83"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Place API</p>
+            <p class="text-sm">
+              <span>7:57:21 pm</span> / <span>00:00:07:196</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Place API</h5>
+<span class='badge badge-success'>04.10.2025 7:57:21 pm</span>
+<span class='badge badge-danger'>04.10.2025 7:57:28 pm</span>
+<span class='badge badge-default'>00:00:07:196</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=83</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> I want validate the Place API's</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="84"><span class="badge log pass-bg mr-2">Pass</span>1 Verify if place being successfully added using AddPlaceAPI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_headers_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add headers to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>Content-Type</td><td>Accept</td></tr><tr><td>application/json</td><td>*/*</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_query_parameters_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>And add query parameters to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>key</td></tr><tr><td>qaclick123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>When user calls "AddPlace" API with "POST" request:</span>
+      <div><table class='markup-table table '><tr><td>latitude</td><td>longitude</td><td>name</td><td>address</td><td>side layout</td><td>language</td></tr><tr><td>-31.388192</td><td>37.589062</td><td>atest</td><td>Maratahalli, Bangalore</td><td>shop</td><td>India-IND</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "200" with below details:</span>
+      <div><table class='markup-table table '><tr><td>status</td><td>place_id</td><td>reference</td><td>id</td></tr><tr><td>OK</td><td>NotNull#</td><td>NotNull</td><td>NotNull</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="99"><span class="badge log pass-bg mr-2">Pass</span>2 Verify if place details fetching successfully by GetPlaceAPI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_query_parameters_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add query parameters to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>key</td><td>place_id</td></tr><tr><td>qaclick123</td><td>place_id#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request(java.lang.String,java.lang.String)">
+                <span>When user calls "GetPlace" API with "GET" request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "200" with below details:</span>
+      <div><table class='markup-table table '><tr><td>address</td><td>name</td><td>language</td></tr><tr><td>NotNull</td><td>NotNull</td><td>NotNull</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="111"><span class="badge log pass-bg mr-2">Pass</span>3 Verify if place details fetching successfully by UpdatePlaceAPI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_query_parameters_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add query parameters to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>key</td></tr><tr><td>qaclick123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>When user calls "UpdatePlace" API with "PUT" request:</span>
+      <div><table class='markup-table table '><tr><td>place_id</td><td>address</td><td>key</td></tr><tr><td>place_id#</td><td>HSR Layout</td><td>qaclick123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "200" with below details:</span>
+      <div><table class='markup-table table '><tr><td>msg</td></tr><tr><td>Address successfully updated</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="123"><span class="badge log pass-bg mr-2">Pass</span>4 Verify if place details fetching successfully by DeletePlaceAPI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.add_query_parameters_to_the_api_with_below_details(io.cucumber.datatable.DataTable)">
+                <span>Given add query parameters to the API with below details:</span>
+      <div><table class='markup-table table '><tr><td>key</td></tr><tr><td>qaclick123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.the_user_calls_api_with_request(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>When user calls "DeletePlace" API with "DELETE" request:</span>
+      <div><table class='markup-table table '><tr><td>place_id</td></tr><tr><td>place_id#</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.CommonSteps.validation_done_with_below_details(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Then validate the status "200" with below details:</span>
+      <div><table class='markup-table table '><tr><td>status</td></tr><tr><td>OK</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>10</span>
+</span>
+<p class="name">@Regression</p>
+<p class="duration text-sm">10 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Regression</h4>
+<span status="pass" class='badge log pass-bg'>10 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>1 Verify the login API, whether able to login</a>
+<div class="">
+<span class="badge badge-default">End to End E-commerce API validation.1 Verify the login API, whether able to login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='14'>2 Verify the Product API, whether able to create a new product</a>
+<div class="">
+<span class="badge badge-default">End to End E-commerce API validation.2 Verify the Product API, whether able to create a new product</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='26'>3 Verify the Order API, whether able to create a new order</a>
+<div class="">
+<span class="badge badge-default">End to End E-commerce API validation.3 Verify the Order API, whether able to create a new order</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='38'>4 Verify the Order Detail API, whether able to fetch order details</a>
+<div class="">
+<span class="badge badge-default">End to End E-commerce API validation.4 Verify the Order Detail API, whether able to fetch order details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='53'>5 Verify the Order Delete API, whether able to delete order</a>
+<div class="">
+<span class="badge badge-default">End to End E-commerce API validation.5 Verify the Order Delete API, whether able to delete order</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:21 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>6 Verify the Product Delete API, whether able to delete product</a>
+<div class="">
+<span class="badge badge-default">End to End E-commerce API validation.6 Verify the Product Delete API, whether able to delete product</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:21 pm</td>
+<td>
+<a href="#" class="linked" test-id='83' id='84'>1 Verify if place being successfully added using AddPlaceAPI</a>
+<div class="">
+<span class="badge badge-default">Validate Place API.1 Verify if place being successfully added using AddPlaceAPI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='83' id='99'>2 Verify if place details fetching successfully by GetPlaceAPI</a>
+<div class="">
+<span class="badge badge-default">Validate Place API.2 Verify if place details fetching successfully by GetPlaceAPI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='83' id='111'>3 Verify if place details fetching successfully by UpdatePlaceAPI</a>
+<div class="">
+<span class="badge badge-default">Validate Place API.3 Verify if place details fetching successfully by UpdatePlaceAPI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:57:26 pm</td>
+<td>
+<a href="#" class="linked" test-id='83' id='123'>4 Verify if place details fetching successfully by DeletePlaceAPI</a>
+<div class="">
+<span class="badge badge-default">Validate Place API.4 Verify if place details fetching successfully by DeletePlaceAPI</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Apr 10, 2025 07:57:10 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Apr 10, 2025 07:57:29 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>2</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>2</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>10</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>34</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"End to End E-commerce API validation":9.252,"Validate Place API":7.196
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@Regression</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>Vamsi Krishna</td>
+</tr>
+<tr>
+<td>version</td>
+<td>10 Home</td>
+</tr>
+<tr>
+<td>role</td>
+<td>Automation Tester</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 2,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 10,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 34,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

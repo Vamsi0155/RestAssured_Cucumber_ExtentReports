@@ -1,256 +1,215 @@
 package utilities;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.util.Map;
-
+import factory.Loader;
+import factory.ReadConfigFiles;
+import io.cucumber.datatable.DataTable;
+import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import factory.Loader;
-import factory.ReadConfigFiles;
-import io.restassured.RestAssured;
-import static io.restassured.RestAssured.*;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
+import java.io.*;
+import java.util.Map;
+
+import static io.restassured.RestAssured.given;
 
 public class BaseClass {
 
-	static ReadConfigFiles config= new ReadConfigFiles();
-	
-	public static RequestSpecification request;
-	public static ResponseSpecification respSpec;
-	public static Response response;
-	
-	private static Logger logger = LogManager.getLogger(BaseClass.class);
-	
-	public static void initiateBaseURL(PrintStream logs) throws FileNotFoundException {
-		
-		try {
-			request=null;
-			if(request==null) {
-				
-				RestAssured.baseURI=ReadConfigFiles.config.getProperty(ReadConfigFiles.config.getProperty("EnvironmentType"));
-				
-				request =new RequestSpecBuilder().setContentType(ContentType.JSON).build();
-						//.addFilter(RequestLoggingFilter.logRequestTo(logs))
-						//.addFilter(ResponseLoggingFilter.logResponseTo(logs))
-				
-			}
-		} catch(Exception e) {
-			logger.error("Error while initiating of Base config: ", e.getMessage());
-		}
-		
-		
+	private RequestSpecification requestSpec;
+	private Response response;
+	private static final Logger logger = LogManager.getLogger(BaseClass.class);
+
+	public BaseClass(){
+		this.initiateBaseURI();
 	}
-	
-	public void addQueryParameters(Map<String, String> map) {
-		
+
+	private void initiateBaseURI() {
 		try {
-			if(request != null) {
-				request.queryParams(map);
-			}
+			RestAssured.baseURI=ReadConfigFiles.getConfigValue(ReadConfigFiles.getConfigValue("EnvironmentType"));
+			requestSpec =new RequestSpecBuilder().build();
 		} catch(Exception e) {
-			logger.error("Error while adding of Query param's", e.getMessage());
+			logger.error("Error while initiating of Base config: {}", e.getMessage());
+			throw e;
 		}
 	}
-	
-	public void addPathParameters(Map<String, String> map) {
-		
-		try {
-			if(request != null) {
-				request.pathParams(map);
+
+	public void addHeaders(Map<String, String> headers){
+		try{
+			if(headers!=null && !headers.isEmpty()){
+				requestSpec.headers(headers);
+				logger.info("List of header's: \n{}", headers);
 			}
-		} catch(Exception e) {
-			logger.error("Error while adding of Path param's", e.getMessage());
+			else logger.error("");
+		}
+		catch (Exception e) {
+			logger.error("error while adding of header's: {}", e.getMessage());
+			throw e;
 		}
 	}
-	
-	public void addParameters(Map<String, String> map) {
-		
-		try {
-			if(request != null) {
-				request.params(map);
+
+	public void addQueryParameters(Map<String, String> queryParams) {
+		try{
+			if(queryParams!=null && !queryParams.isEmpty()){
+				requestSpec.queryParams(queryParams);
+				logger.info("List of query param's: \n{}", queryParams);
 			}
-		} catch(Exception e) {
-			logger.error("Error while adding of Param's", e.getMessage());
+			else logger.error("");
+		}
+		catch (Exception e) {
+			logger.error("error while adding of query param's: {}", e.getMessage());
+			throw e;
 		}
 	}
-	
-	public static void addAPIType(String api, String type) {
-		
+
+	public void addPathParameters(Map<String, String> pathParams) {
+		try{
+			if(pathParams!=null && !pathParams.isEmpty()){
+				requestSpec.pathParams(pathParams);
+				logger.info("List of path param's: \n{}", pathParams);
+			}
+			else logger.error("");
+		}
+		catch (Exception e) {
+			logger.error("error while adding of path param's: {}", e.getMessage());
+			throw e;
+		}
+	}
+
+	public void executeAPI(String apiName, String type, DataTable dataTable) {
+
+		Loader.loadInputValues(apiName, dataTable);
+		String reqPayLoad =createJsonInput(apiName);
+		String endPoint = ReadConfigFiles.getApiEndpoint(apiName);
+
 		try {
-			if(request != null) {
-				
-				String endPoint = ReadConfigFiles.apiEndpoints.getProperty(api);
-				if(!endPoint.isEmpty()) {
-					
-					logger.info("RestAPI url: " + ReadConfigFiles.config.getProperty(ReadConfigFiles.config.getProperty("EnvironmentType")) + endPoint );
-					
-					if(type.equals("GET")) {
-						response = request.when().get(endPoint).thenReturn();
-					}
-					else if(type.equals("POST")) {
-						response = request.when().post(endPoint).thenReturn();
-					}
-					else if(type.equals("PUT")) {
-						response = request.when().put(endPoint).thenReturn();
-					}
-					else if(type.equals("DELETE")) {
-						response = request.when().delete(endPoint).thenReturn();
-					}
-					else
-						logger.error("No method type is found");
+			if(endPoint!=null && !endPoint.isEmpty()) {
+				logger.info("RestAPI url: {}{}", ReadConfigFiles.getConfigValue(ReadConfigFiles.getConfigValue("EnvironmentType")), endPoint);
+
+				if(type.equals("GET")) {
+					response = given().spec(requestSpec).body(reqPayLoad).when().get(endPoint).thenReturn();
 				}
-				else 
-					logger.error("Invalid Rest URI found");
-			}
-		}
-		catch(Exception e) { 
-			logger.error("Error while adding of API type", e.getMessage());
-		}
-	}
-	
-	public static void addPayLoad(String apiName) {
-		
-		String body =createJsonInput(apiName);
-		try {
-			if(!body.isEmpty()) {
-				request = given().spec(request).body(body);
-				logger.info("Rest Request: " + body);
+				else if(type.equals("POST")) {
+					response = given().spec(requestSpec).body(reqPayLoad).when().post(endPoint).thenReturn();
+				}
+				else if(type.equals("PUT")) {
+					response = given().spec(requestSpec).body(reqPayLoad).when().put(endPoint).thenReturn();
+				}
+				else if(type.equals("DELETE")) {
+					response = given().spec(requestSpec).body(reqPayLoad).when().delete(endPoint).thenReturn();
+				}
+				else {
+					throw new IllegalArgumentException("No method type found: " + type);
+				}
 			}
 			else
-				logger.error("Empty request body found");
+				throw new IllegalArgumentException("No end-point found: " + endPoint);
+			logger.info("Rest Request: \n{}", reqPayLoad);
 		}
 		catch(Exception e) {
-			logger.error("Error while adding of payload: ", e.getMessage());
+			logger.error("Error while executing of API: {}", e.getMessage());
+			throw e;
 		}
 	}
-	
-	public static void payLoad() {
-		
+
+	public void executeAPI(String apiName, String type) {
+
+		String endPoint = ReadConfigFiles.getApiEndpoint(apiName);
 		try {
-			if(request != null) {
-				request = given().spec(request);
+			if(endPoint!=null && !endPoint.isEmpty()) {
+				logger.info("RestAPI url: {}{}", ReadConfigFiles.getConfigValue(ReadConfigFiles.getConfigValue("EnvironmentType")), endPoint);
+
+				if(type.equals("GET")) {
+					response = given().spec(requestSpec).when().get(endPoint).thenReturn();
+				}
+				else if(type.equals("POST")) {
+					response = given().spec(requestSpec).when().post(endPoint).thenReturn();
+				}
+				else if(type.equals("PUT")) {
+					response = given().spec(requestSpec).when().put(endPoint).thenReturn();
+				}
+				else if(type.equals("DELETE")) {
+					response = given().spec(requestSpec).when().delete(endPoint).thenReturn();
+				}
+				else {
+					throw new IllegalArgumentException("No method type found: " + type);
+				}
 			}
 			else
-				logger.error("Empty request found");
+				throw new IllegalArgumentException("No end-point found: " + endPoint);
 		}
 		catch(Exception e) {
-			logger.error("Error while adding of payload: ", e.getMessage());
+			logger.error("Error while executing of API: {}", e.getMessage());
+			throw e;
 		}
 	}
-	
-	public static void validateStatusCode(int stat) {
-		
-		if( response != null) {
-			logger.info("Response code: " + response.getStatusCode());
+
+	public void multi_formData(DataTable dataTable){
+
+		Map<String, String> formData = Loader.updateTableWithGlobalValues(dataTable);
+		for (String key : formData.keySet()){
+			if(key.contains("-file")){
+				String key1 = key.split("-")[0];
+				requestSpec.multiPart(key1, new File(formData.get(key)));
+			}
+			else
+				requestSpec.multiPart(key, formData.get(key));
+		}
+		logger.info("List of form-data: \n{}", formData);
+	}
+
+	public String validateResponse(int stat) {
+
+		if( response!= null) {
+			logger.info("Response code: {}", response.getStatusCode());
+			logger.info("Response: {}", response.getBody().asPrettyString());
+
 			response.then().assertThat().statusCode(stat);
+			return response.getBody().asString();
 		}
-		else 
-			logger.error("response object is empty");
+		else
+			throw new RuntimeException("No response found!!");
 	}
-	
-	public String createInputJsonFile(String service) {
-		
-		String reqTempFile ="./src/test/resources/requestTemplates/" + service + "_Json.txt";
-		
-		StringBuilder modifiedContent = new StringBuilder();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(reqTempFile))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                // Split the line based on '{$'
-                String[] parts = line.split("\\{\\$");
+	public String createJsonInput(String restAPI) {
 
-                if (parts.length > 1) {
-                    // Process each part
-                    modifiedContent.append(parts[0]);  // Append the first part before '{$'
-
-                    for (int i = 1; i < parts.length; i++) {
-                        // Find the closing '}' to extract the variable name
-                        int endIndex = parts[i].indexOf('}');
-                        if (endIndex != -1) {
-                            String key = parts[i].substring(0, endIndex);
-                            // Replace the keyValue with the corresponding Java value
-                            String value=Loader.getInputValue(key, service);
-                            if(!value.isEmpty()) {
-                            	modifiedContent.append(value);
-                            }
-                            else {
-                            	modifiedContent.append("{$").append(key).append("}");
-                            	break;
-                            }
-
-                            // Append the rest of the part after '}'
-                            modifiedContent.append(parts[i].substring(endIndex + 1));
-                        } else {
-                            // If no closing '}' is found, append the original "{$" + parts[i]
-                            modifiedContent.append("{$").append(parts[i]);
-                        }
-                    }
-                } 
-                else {
-                    // If no '{$' is found in the line, append the original line
-                    modifiedContent.append(line);
-                }
-                // Move to the next line
-                modifiedContent.append(System.lineSeparator());
-            }
-            
-        }
-        catch (IOException e) {
-            logger.error("Error in formating request for Rest API: ", e.getMessage());
-        }
-
-        return modifiedContent.toString();
-	}
-	
-	public static String createJsonInput(String restAPI) {
-		
 		String reqTempFile ="./src/test/resources/requestTemplates/" + restAPI + "_Json.txt";
 
 		String line, input="";
-		
+
 		try {
 			FileReader file= new FileReader(reqTempFile);
-			
+
 			try (BufferedReader buffer = new BufferedReader(file)) {
-				
+
 				while((line = buffer.readLine()) != null) {
-					
+
 					if(!line.contains("{$")) {
 						input = input + line + System.getProperty("line.separator");
 					}
 					else {
 						logger.info(line);
 						String part1 = line.split("\\{")[0];
-						
+
 						String part2;
-						
+
 						if((line.contains("$")) && (!line.contains(","))) {
-							
+
 							if(line.endsWith("\"")) {
 								part2 = line.split("\\}")[1];
 							}
-							else 
+							else
 								part2 = "Dummy";
-							
 						}
 						else
 							part2 = line.split("\\}")[1];
-						
+
 						String valueName = line.split("\\{")[1].substring(1).split("\\}")[0];
 						String value = Loader.getInputValue(valueName, restAPI);
-						
+
 						if(!value.isEmpty()) {
-							
+
 							if((part2.equals("Dummy")) && (line.contains("$"))) {
 								input = input + part1 + value + System.getProperty("line.separator");
 							}
@@ -260,12 +219,11 @@ public class BaseClass {
 					}
 				}
 			}
-			
 		}
 		catch(IOException e) {
-            logger.error("Error in formating request for Rest API: ", e.getMessage());
+			logger.error("Error in formating request for Rest API: {}", e.getMessage());
 		}
-		
+
 		return input;
 	}
 }

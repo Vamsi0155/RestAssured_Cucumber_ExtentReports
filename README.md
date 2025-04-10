@@ -33,7 +33,7 @@
 - Cucumber 7.16v or higher
 - Extent-reports 5.0v or higher
 
-## How to run form cmd line
+## How to run from cmd line
 In the pom.xml, we have configured Extent reports and run the features by following different commands.
 
 ### To build the Project
@@ -44,12 +44,12 @@ mvn clean install
 
 ### To run specific feature, use the following command:
 ```bash
-mvn clean install -Dcucumber.options="--features src/test/resources/features/placeValidations.feature"
+mvn clean install -Dcucumber.options="--features src/test/resources/features/GoogleAPI/placeValidations.feature"
 ```
 
 ### To run multiple features, use the following command:
 ```bash
-mvn clean install -Dcucumber.options="--features src/test/resources/features/placeValidations.feature,src/test/resources/features/Example.feature"
+mvn clean install -Dcucumber.options="--features src/test/resources/features/GoogleAPI/placeValidations.feature,src/test/resources/features/EcommerceAPI/EndtoEnd_E_commerce.feature"
 ```
 
 ### To run scenarios with Tag's, use the following command:
@@ -59,10 +59,11 @@ mvn clean install -Dcucumber.options="--tags @Regression"
 
 ### To run features with Tag's, use the following command:
 ```bash
-mvn clean install -Dcucumber.options="--features src/test/resources/features/placeValidations.feature --tags @Regression"
+mvn clean install -Dcucumber.options="--features src/test/resources/features/GoogleAPI/placeValidations.feature --tags @Regression"
 ```
 
 ## Jenkins CI/CD
+Choose the Maven project and configure by following detail,
 #### General Section:
  Select "This project is parameterized" and set below parameters.
 1. For 1st parameter, select String parameter and set below details:
@@ -72,7 +73,7 @@ mvn clean install -Dcucumber.options="--features src/test/resources/features/pla
 2. For 2nd parameter, select choice parameter and set below details:
  - Name: Tags
  - Choices: Regression, Smoke, Sanity
- - Description: -- Choose the tags. By default Regression
+ - Description: -- Choose the tags. By default, Regression
 #### Build Section:
 1. For Root POM, give as "pom.xml"
 2. For Goals and Options, use the following command:
@@ -81,4 +82,4 @@ clean verify -Dcucumber.options="--features ${Features} --tags @${Tags}"
 ```
 3. Go to "Advanced" and check the "use custom workspace". Add project directory path.
 
-Note: Add project path in the custom workspace field and Also remainings as per requirements.
+Note: Add project path in the custom workspace field and Also remaining as per requirements.
