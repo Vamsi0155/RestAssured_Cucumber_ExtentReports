@@ -28,7 +28,7 @@ jobs:
 
       - name: Rename Spark.html to index.html
         run: |
-          cp "./reports/extentReports/SparkReport 10-Apr-25 19-57-11/Reports/Spark.html" "./reports/extentReports/SparkReport 10-Apr-25 19-57-11/HtmlReport/index.html"
+          cp "./reports/extentReports/SparkReport 10-Apr-25 19-57-11/Reports/Spark.html" "./reports/extentReports/SparkReport 10-Apr-25 19-57-11/Reports/index.html"
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
